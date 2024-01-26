@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+   
+   
+    <form id="frm" class="container">
+    
+            <h1>CALCULA ENEM!</h1> <br>
+              
+        <label for=" nota1">Linguagens, Códigos e suas Tecnologias:</label> <br>
+        <input type="text" id="nota1" nome="nota1">
+        <br> 
+        <label for="nota2">Ciências Humanas e suas Tecnologias:</label> <br>
+        <input type="text" id="nota2" nome="nota2">
+        <br> 
+        <label for="nota3">Ciências da Natureza e suas Tecnologias:</label> <br>
+        <input type="text" id="nota3" nome="nota3">
+        <br> 
+        <label for="nota4">Matemática e suas Tecnologias:</label> <br>
+        <input type="text" id="nota4" nome="nota4">
+        <br> 
+        <label for="nota5">Redação:</label> <br>
+        <input type="text" id="nota5" nome="nota5">
+        <br> 
+        <button type="submit">Enviar</button>
+        <br><br>
+        <h3></h3>
+    </form>
+     <footer>
+        <img src="enem.png" alt="ex2.js">
+     </footer>
+    
+    <script>
+      const frm = document.querySelector("#frm");
+        const resp = document.querySelector("h3");
+        const nota1 = document.querySelector("#nota1");
+        const nota2 = document.querySelector("#nota2");
+        const nota3 = document.querySelector("#nota3");
+        const nota4 = document.querySelector("#nota4");
+        const nota5 = document.querySelector("#nota5");
+
+        frm.addEventListener("submit", (e) => {
+            const resul = (parseFloat(nota1.value) + parseFloat(nota2.value) + parseFloat(nota3.value) + parseFloat(nota4.value) + parseFloat(nota5.value)) / 5;
+            resp.innerText = `A média é: ${resul}!`;
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
